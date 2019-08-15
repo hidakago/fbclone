@@ -1,0 +1,97 @@
+<header class="container-fluid">
+  <div class="row">
+    <div class="header-left col-xs-12 col-md-6">
+      <p>fakecook</p>
+    </div>
+      <div class="header-right col-xs-12 col-md-6">
+        <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+          <div class="header-right-table">
+            <table>
+              <tr>
+                <td class="header-right-title"><p>メールアドレス</p></td>
+                <td class="header-right-title"><p>パスワード</p></td>
+              </tr>
+              <tr>
+                <td>
+                  <%= f.email_field :email %>
+                </td>
+                <td>
+                  <%= f.password_field :password %>
+                </td>
+                <td>
+                  <label class="loginbutton">
+                    <%= f.submit "ログイン" %>
+                  </label>
+                </td>
+              </tr>
+            </table>
+            <% flash.each do |key, value| %>
+              <div class="loginerror alert alert-danger" role="alert">
+                <%= content_tag(:div, value, class: "#{key}") %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+  </div>
+</header>
+<div class="middle">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="middle-left hidden-xs hidden-sm col-md-6">
+        <div class="middle-left-box">
+          <div class="introduction">
+            Fakecookを使うと、料理人っぽい人たちとつながりを深められます。ケータイ、スマートフォンからもアクセスできます。
+          </div>
+          <div class="disp-img1"></div>
+          <div class="disp-img2"></div>
+          <div class="disp-img3"></div>
+          <div class="disp-img4"></div>
+        </div>
+      </div>
+      <div class="middle-right col-xs-12 col-md-6">
+        <div class="middle-right-box">
+          <div class="registration-text">
+            <div class="registration-title">
+              アカウント登録
+            </div>
+            <div class="registration-description">
+              簡単に登録できます。
+            </div>
+          </div>
+          <%= form_with(model: @user, local: true) do |f| %>
+            <% if @user.errors.any? %>
+              <div id="error_explanation" class="alert alert-danger" role="alert">
+                <h4><%= pluralize(@user.errors.count, "error") %> prohibited this @user from being saved:</h4>
+                <ul>
+                <% @user.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
+            <div class="registration-box">
+              <div class="registration-input form-group-lg">
+                 <%= f.text_field :name, class: "form-control", placeholder: "名前" %>
+              </div>
+              <div class="registration-input form-group-lg">
+                <%= f.email_field :email, class: "form-control", placeholder: "メールアドレス" %>
+              </div>
+              <div class="registration-input form-group-lg">
+                <%= f.password_field :password, class: "form-control", placeholder: "パスワード" %>
+              </div>
+              <div class="registration-input form-group-lg">
+                <%= f.password_field :password_confirmation, class: "form-control", placeholder: "確認用パスワード" %>
+              </div>
+              <div class="registration-submit">
+                <input class="btn btn-success btn-lg" type="submit" value="アカウント登録">
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+</footer>
