@@ -1,0 +1,82 @@
+<header>
+  <div class="container-fluid">
+  <div class="row">
+    <div class="header-middle col-xs-12 col-md-12">
+    <!-- <div class="header-middle"> -->
+      <div class="header-middle-box">
+        <p>
+          <%= @user.name %>
+          <span class="space"><%= link_to("ログアウト", session_path(current_user.id), method: :delete) %></span>
+        </p>
+      </div>
+    </div>
+  </div>
+  </div>
+</header>
+<div class="middle-show">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="upper-middle">
+        <div class="upper-middle-fill-left1 hidden-xs hidden-sm col-md-1">
+        </div>
+        <div class="upper-middle-fill-left2 hidden-xs hidden-sm col-md-2">
+        </div>
+        <div class="upper-middle-contents col-xs-12 col-md-5">
+          <p><%= @user.name %></p>
+        </div>
+        <div class="upper-middle-fill-right hidden-xs hidden-sm col-md-4">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="under-middle">
+        <div class="under-middle-fill-left1 hidden-xs hidden-sm col-md-1">
+        </div>
+        <div class="under-middle-fill-left2 hidden-xs hidden-sm col-md-2">
+        </div>
+        <div class="under-middle-contents col-xs-12 col-md-5">
+          <div class="under-middle-message">
+            <% if notice %>
+              <div class="message-text alert alert-success" role="alert"><%= notice %></div>
+            <% end %>
+          </div>
+          <div class="under-middle-button-area">
+            <div class="button-new-post">
+              <a class="btn btn-default" href="<%= new_picture_path %>" role="button">投稿を作成</a>
+            </div>
+          </div>
+          <div class="under-middle-post-title">
+            <p>投稿</p>
+          </div>
+          <div class="under-middle-post-area">
+            <% @pictures.each do |picture| %>
+            <article class="content">
+              <div class="contents-box">
+                <div class="contents-box-contributor">
+                  <div class="contents-box-contributor-name">
+                    <p><%= @user.name %>
+                      <span><%= picture.updated_at.strftime('%Y年%m月%d日 %H:%M:%S') %></span>
+                    </p>
+                  </div>
+                </div>
+                <div class="contents-box-comment">
+                  <p><%= excerpt_comment(picture.comment) %>
+                  </p>
+                </div>
+                <div class="contents-box-image">
+                  <%= image_tag(picture.image.url) if picture.image && picture.image.url %>
+                </div>
+                <div class="contents-detail">
+                  <a class="btn btn-default" href="<%= picture_path(picture.id) %>" role="button">詳細</a>
+                </div>
+              </div>
+            </article>
+            <% end %>
+          </div>
+        </div>
+        <div class="under-middle-fill-right hidden-xs hidden-sm col-md-4">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

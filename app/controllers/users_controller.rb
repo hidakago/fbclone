@@ -17,6 +17,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    if logged_in?
+      @user = User.find(current_user.id)
+      @pictures = current_user.pictures
+    else
+      redirect_to new_user_path
+    end
+  end
+
   private
 
   def user_params

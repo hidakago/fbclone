@@ -124,4 +124,134 @@
     height: 16.3rem;
     background-color: #fff;
   }
+  .header-middle {
+    width: 100%;
+    height: 4.3rem;
+    background-color: #3b5998;
+    display: inline-block;
+    text-align: center;
+  }
+  .header-middle-box {
+    font-size: 1.5rem;
+    color : #fff;
+    margin-top: 1.1rem;
+    padding: 0;
+  }
+  .header-middle-box a {
+    color: #fff;
+  }
+  .space {
+    margin-left: 10rem;
+  }
+  .middle-show {
+    margin-top: 4.3rem;
+    height: 100%;
+    background: linear-gradient(white, #D3D8E8);
+  }
+  .upper-middle {
+    height: 35rem;
+  }
+  .upper-middle-fill-left1 {
+    height: 100%;
+  }
+  .upper-middle-fill-left2 {
+    height: 100%;
+  }
+  .upper-middle-contents {
+    height: 100%;
+    background-color: #1DA1F2;
+  }
+  .upper-middle-contents p {
+    font-size: 3rem;
+    color : #fff;
+    margin-top: 29rem;
+  }
+  .upper-middle-fill-right {
+    height: 100%;
+  }
+  .under-middle-fill-left1 {
+    height: 100%;
+  }
+  .under-middle-fill-left2 {
+    height: 100%;
+  }
+  .under-middle-contents {
+    height: 100%;
+  }
+  .under-middle-message {
+    height: 3rem;
+  }
+  .under-middle-fill-right {
+    height: 100%;
+  }
+  .under-middle-button-area {
+    margin-top: 1.3rem;
+    height: 5rem;
+    background: linear-gradient(white, #D3D8E8);
+  }
+  .button-new-post {
+    height: 4rem;
+    width: 10rem;
+    padding-top: 1rem;
+    margin-left: 1rem;
+  }
+  .button-new-post a {
+    color: #000000;
+  }
+  .button-new-post p {
+    line-height: 3rem;
+  }
+  .message-text {
+    height: 3rem;
+    padding: 0;
+    animation-name:fade-in1;
+    animation-duration:4s; /*//アニメーション時間*/
+    animation-timing-function: ease-out; /*/アニメーションさせるイージング*/
+    animation-delay:1s; /*/アニメーション開始させる時間*/
+    animation-iteration-count:1; /*/繰り返し回数*/
+    animation-direction:normal; /*/往復処理をするかどうか*/
+    animation-fill-mode: forwards; /*/アニメーション後のスタイルをどうするか*/
+  }
+  .message-text p {
+    line-height: 3rem;
+  }
+  @keyframes fade-in1 {
+    0% {opacity: 1}
+    100% {opacity: 0}
+  }
+  .under-middle-post-title p {
+    line-height: 4rem;
+  }
+  .contents-box {
+    background: linear-gradient(white, #D3D8E8);
+    margin-top: 1rem;
+  }
+  .contents-box-contributor-name P {
+    font-size: 2rem;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    // background-color: blue;
+  }
+  .contents-box-contributor-name span {
+    font-size: 1.5rem;
+    margin-left: 3rem;
+  }
+  .contents-box-comment {
+    margin-top: 1.2rem;
+    margin-left: 1.2rem;
+    margin-right: 1.2rem;
+    background-color: #fff;
+  }
+  .contents-box-image {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+  .contents-box-comment p {
+    word-wrap: break-word;
+  }
+  .contents-detail {
+    margin-top: 1rem;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+  }
 }
