@@ -1,0 +1,64 @@
+<header>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="header-left hidden-xs hidden-sm col-md-4">
+      </div>
+      <div class="header-middle col-xs-12 col-md-4">
+        <div class="header-middle-box">
+          <p>
+            <%= current_user.name %>
+            <span class="space"><%= link_to("ログアウト", session_path(current_user.id), method: :delete) %></span>
+          </p>
+        </div>
+      </div>
+      <div class="header-right hidden-xs hidden-sm col-md-4">
+      </div>
+    </div>
+  </div>
+</header>
+<div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="content-left hidden-xs hidden-sm col-md-4">
+      </div>
+      <%= form_with(model: @picture, local: true ) do |f| %>
+        <%= f.hidden_field :comment %>
+        <%= f.hidden_field :image %>
+        <div class="content-middle col-xs-12 col-md-4">
+          <div class="content-middle-head">
+          </div>
+          <div class="content-middle-comment">
+            <div class="content-middle-comment-title">
+              <p>コメント</p>
+            </div>
+            <div class="content-middle-comment-box">
+              <p><%= @picture.comment %></p>
+            </div>
+          </div>
+          <div class="content-middle-image">
+            <div class="content-middle-image-title">
+              <p>画像</p>
+            </div>
+            <div class="content-middle-image-box">
+              <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
+              <%= f.hidden_field :image_cache %>
+            </div>
+          </div>
+          <div class="content-middle-select">
+            <div class="content-middle-select-edit">
+              <a class="btn btn-default" href="<%= edit_picture_path(@picture.id) %>" role="button">編集</a>
+            </div>
+            <div class="content-middle-select-delete">
+              <a class="btn btn-default" href="<%= picture_path(@picture.id) %>" data-confirm="削除しますか？" data-method="delete" role="button">削除</a>
+            </div>
+            <div class="content-middle-select-back">
+              <a class="btn btn-default" href="<%= user_path(current_user.id) %>" role="button">戻る</a>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <div class="content-right hidden-xs hidden-sm col-md-4">
+      </div>
+    </div>
+  </div>
+</div>
