@@ -1,6 +1,7 @@
 class Picture < ApplicationRecord
   validates :comment_or_image, presence: true
   belongs_to :user
+  mount_uploader :image, ImageUploader
 
   private
 
