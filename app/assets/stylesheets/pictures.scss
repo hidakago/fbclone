@@ -1,3 +1,87 @@
-// Place all the styles related to the pictures controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.pictures {
+  header {
+    font-size: 1.2rem;
+    border-bottom: solid 1px #1c1e21;
+    background-color: #3b5998;
+  }
+  .header-left {
+    height: 4.3rem;
+  }
+  .header-middle {
+    height: 4.3rem;
+    text-align: center;
+  }
+  .header-right {
+    height: 4.3rem;
+  }
+  .header-middle-box {
+    font-size: 1.5rem;
+    color : #fff;
+    margin-top: 1.1rem;
+    display: inline-block;
+    padding: 0;
+  }
+  .header-middle-box a {
+    color: #fff;
+  }
+  .space {
+    margin-left: 10rem;
+  }
+  .content-middle {
+    // height: 100%;
+    background: linear-gradient(white, #D3D8E8);
+    height: 100%;
+  }
+  .content-middle-head {
+    width: 100%;
+  }
+  .content-middle-head-back {
+    float: right;
+  }
+  .content-middle-comment p {
+    word-wrap: break-word;
+    // width: 100%;
+  }
+  .content-middle-comment-title {
+    height: 5rem;
+    line-height: 5rem;
+  }
+  .content-middle-comment-box {
+    background-color: #fff;
+  }
+  .content-middle-image {
+  }
+  .content-middle-image-title {
+    height: 5rem;
+    line-height: 5rem;
+  }
+  .content-middle-image-box {
+  }
+  .content-middle-submit {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .content-middle-submit input {
+    width: 100%;
+    color: #fff;
+    background-color: #3b5998;
+  }
+  .content-middle-select {
+    margin-top: 1rem;
+  }
+  .content-middle-select-edit {
+    float: left;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+  }
+  .content-middle-select-delete {
+    float: left;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+  }
+  .content-middle-select-back {
+    float: left;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+  }
+}
