@@ -22,8 +22,6 @@
       <div class="content-left hidden-xs hidden-sm col-md-4">
       </div>
       <%= form_with(model: @picture, local: true ) do |f| %>
-        <%= f.hidden_field :comment %>
-        <%= f.hidden_field :image %>
         <div class="content-middle col-xs-12 col-md-4">
           <div class="content-middle-head">
             <div class="content-middle-head-back">
@@ -36,6 +34,7 @@
             </div>
             <div class="content-middle-comment-box">
               <p><%= @picture.comment %></p>
+              <%= f.hidden_field :comment %>
             </div>
           </div>
           <div class="content-middle-image">
